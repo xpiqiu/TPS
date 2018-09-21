@@ -7,18 +7,18 @@ import training.adv.team1.Domin.TraderRequest;
 
 public interface TraderRequestDao {
 
-	//Ìí¼Ó·½·¨
+	//æ·»åŠ æ–¹æ³•
     public void add(TraderRequest t)throws SQLException;
     
-    //¸üÐÂ·½·¨
+    //æ›´æ–°æ–¹æ³•
     public void update(TraderRequest t)throws SQLException;
     
-    //É¾³ý·½·¨
+    //åˆ é™¤æ–¹æ³•
     public void delete(int id)throws SQLException;
     
-    //²éÕÒ·½·¨
+    //æŸ¥æ‰¾æ–¹æ³•
     public TraderRequest findById(String boundid,String salesid)throws SQLException;
     
-    //²éÕÒËùÓÐ
+    //æŸ¥æ‰¾æ‰€æœ‰
     public List<TraderRequest> findAll()throws SQLException;
 }

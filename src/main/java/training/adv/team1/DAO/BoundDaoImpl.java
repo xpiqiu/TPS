@@ -1,8 +1,5 @@
 package training.adv.team1.DAO;
 
-import training.adv.team1.Api.*;
-import training.adv.team1.Domin.Bound;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,18 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BoundDaoImpl implements BoundDao{
+import training.adv.team1.Api.BoundDao;
+import training.adv.team1.Domin.Bound;
 
-	//改状态
-	
-	 public void update(Bound b) throws SQLException {
+public class BoundDaoImpl implements BoundDao {
+
+	 public void update(String id,int boundstatus) throws SQLException {
 	 Connection conn = null;
 	 PreparedStatement ps = null;
 	 String sql = "update Bound set BoundStatus=? where BoundID=?";
 	 try{
 		 conn = DBUtil.getConnection();
-		 ps.setInt(1 , b.getBoundStatus());
-		 ps.setString(2, b.getBoundID());
+		 ps=conn.prepareStatement(sql);
+		 ps.setInt(1, boundstatus);
+		 ps.setString(2,id);
 		 ps.executeUpdate();
 	 }catch(SQLException e){
 		 e.printStackTrace();
@@ -31,29 +30,25 @@ public class BoundDaoImpl implements BoundDao{
 		 }        
 	 }
 
-	//删整行
-
-	public void delete(int id) throws SQLException {
+	public void delete(String id) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		String sql = "delete from Bound where BoundID=?";
-		try{
+		String sql = "delete from Bound where BoundID='"+id+"'";
+		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1,id);
+			ps.setString(1, id);
 			ps.executeUpdate();
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new SQLException("删除数据失败");
-		}finally{
+		} finally {
 			DBUtil.close(null, ps, conn);
-		}	
+		}
+		
 	}
 
-	//模糊查询
-
 	public List<Bound> findallById(String temp) throws SQLException {
-		// TODO Auto-generated method stub
 		 Connection conn = null;
 		 PreparedStatement ps = null;
 		 ResultSet rs = null;

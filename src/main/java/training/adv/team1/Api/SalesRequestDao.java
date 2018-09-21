@@ -6,15 +6,15 @@ import training.adv.team1.Domin.SalesRequest;
 
 public interface SalesRequestDao {
 
-	//添加方法
+	//娣诲姞鏂规硶
     public void add(SalesRequest s)throws SQLException;
     
-    //更新方法
+    //鏇存柊鏂规硶
     public void update(SalesRequest s)throws SQLException;
     
-    //删除方法
+    //鍒犻櫎鏂规硶
     public void delete(int id)throws SQLException;
     
-    //查找方法
+    //鏌ユ壘鏂规硶
     public SalesRequest findById(String boundid,String salesid)throws SQLException;
 }

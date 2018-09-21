@@ -11,7 +11,6 @@ import training.adv.team1.Domin.TraderRequest;
 
 public class TraderRequsetDaoImpl implements TraderRequestDao {
 
-	//增
 	public void add(TraderRequest t) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -29,15 +28,12 @@ public class TraderRequsetDaoImpl implements TraderRequestDao {
 			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("添加数据失败");
+			throw new SQLException("娣诲姞鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(null, ps, conn);
 		}
-
 	}
 
-	
-	//改状态
 	public void update(TraderRequest t) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -49,13 +45,12 @@ public class TraderRequsetDaoImpl implements TraderRequestDao {
 			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("更新数据失败");
+			throw new SQLException("鏇存柊鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(null, ps, conn);
 			}  
 	}
 
-	//删整行
 	public void delete(int id) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -67,15 +62,13 @@ public class TraderRequsetDaoImpl implements TraderRequestDao {
 			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("删除数据失败");
+			throw new SQLException("鍒犻櫎鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(null, ps, conn);
 		}
-
 	}
 
-	//查
-	public TraderRequest findById(String boundid,String salesid) throws SQLException {
+	public TraderRequest findById(String boundid, String salesid) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps =  null;
 		String sql = "select * from TraderRequest where  BoundID=? and SalesID=?";
@@ -87,7 +80,7 @@ public class TraderRequsetDaoImpl implements TraderRequestDao {
 			
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("删除数据失败");
+			throw new SQLException("鍒犻櫎鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(null, ps, conn);
 		}
@@ -98,5 +91,4 @@ public class TraderRequsetDaoImpl implements TraderRequestDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

@@ -7,10 +7,10 @@ import training.adv.team1.Domin.User;
 
 public interface UserDao {
 	
-    //¸Ä
+    //æ”¹
     public void update(User u)throws SQLException;
 
-    //²é
+    //æŸ¥
     public List<User> findallById(String temp)throws SQLException;
 
 }

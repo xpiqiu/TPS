@@ -7,13 +7,13 @@ import training.adv.team1.Domin.Bound;
 
 public interface BoundDao {
     
-    //¸Ä
-    public void update(Bound b)throws SQLException;
+    //åˆ 
+    public void update(String id,int status)throws SQLException;
     
-    //É¾
-    public void delete(int id)throws SQLException;
+    //æ”¹
+    public void delete(String id)throws SQLException;
     
-    //²é
+    //æŸ¥
     public List<Bound> findallById(String id)throws SQLException;
     
 

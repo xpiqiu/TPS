@@ -14,56 +14,54 @@ public class SalesRequestDaoImpl implements SalesRequestDao {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		String sql = "insert into SalesRequest(SRID,BoundID,SalesID,SRStatus,SecondPrice,SRTime)values(?,?,?,?,?,?)";
-		try{
+		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,s.getSRId());
+			ps.setString(1, s.getSRId());
 			ps.setString(2, s.getBoundId());
 			ps.setString(3, s.getSalesId());
 			ps.setInt(4, s.getSRStatus());
-			ps.setDouble(5,s.getSecondPrice());
+			ps.setDouble(5, s.getSecondPrice());
 			ps.setDate(6, (Date) s.getSRTime());
 			ps.executeUpdate();
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("ÃÌº” ˝æ› ß∞‹");
-		}finally{
+			throw new SQLException("Ê∑ªÂä†Êï∞ÊçÆÂ§±Ë¥•");
+		} finally {
 			DBUtil.close(null, ps, conn);
 		}
-
 	}
 
 	public void update(SalesRequest s) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		String sql = "update SalesRequest set SRStatus=? where SRID=?";
-		try{
+		try {
 			conn = DBUtil.getConnection();
-		    ps.setInt(1 , s.getSRStatus());
-			ps.setString(2,s.getSRId());
+			ps.setInt(1, s.getSRStatus());
+			ps.setString(2, s.getSRId());
 			ps.executeUpdate();
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("∏¸–¬ ˝æ› ß∞‹");
-		}finally{
+			throw new SQLException("Êõ¥Êñ∞Êï∞ÊçÆÂ§±Ë¥•");
+		} finally {
 			DBUtil.close(null, ps, conn);
-			}
-
+		}
 	}
 
 	public void delete(int id) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		String sql = "delete from SalesRequest where SRID=?";
-		try{
+		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1,id);
+			ps.setInt(1, id);
 			ps.executeUpdate();
-		}catch(SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("…æ≥˝ ˝æ› ß∞‹");
-		}finally{
+			throw new SQLException("Âà†Èô§Êï∞ÊçÆÂ§±Ë¥•");
+		} finally {
 			DBUtil.close(null, ps, conn);
 		}
 
@@ -71,21 +69,20 @@ public class SalesRequestDaoImpl implements SalesRequestDao {
 
 	public SalesRequest findById(String boundid, String salesid) throws SQLException {
 		Connection conn = null;
-		PreparedStatement ps =  null;
+		PreparedStatement ps = null;
 		String sql = "select * from SalesRequest where  BoundID=? and SalesID=?";
-		try{
+		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, boundid);
 			ps.setString(2, salesid);
-			
-		}catch(SQLException e){
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SQLException("…æ≥˝ ˝æ› ß∞‹");
-		}finally{
+			throw new SQLException("Âà†Èô§Êï∞ÊçÆÂ§±Ë¥•");
+		} finally {
 			DBUtil.close(null, ps, conn);
 		}
 		return null;
 	}
-
 }

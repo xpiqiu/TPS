@@ -13,8 +13,6 @@ import java.sql.Connection;
 
 public class UsersDaoImpl implements UserDao{
 
-
-	//改状态
 	public void update(User u) throws SQLException {
 		Connection conn = null;
 		PreparedStatement ps = null;;
@@ -26,14 +24,13 @@ public class UsersDaoImpl implements UserDao{
 			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("更新数据失败");
+			throw new SQLException("鏇存柊鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(null, ps, conn);
 			}  
+		
 	}
 
-	
-	//模糊查询
 	public List<User> findallById(String temp) throws SQLException {
 		 Connection conn = null;
 		 PreparedStatement ps = null;
@@ -56,12 +53,10 @@ public class UsersDaoImpl implements UserDao{
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
-			throw new SQLException("查询数据失败");
+			throw new SQLException("鏌ヨ鏁版嵁澶辫触");
 		}finally{
 			DBUtil.close(rs, ps, conn);
 		}
 		return users;
 	}
-
-
 }
