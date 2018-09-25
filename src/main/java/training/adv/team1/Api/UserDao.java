@@ -3,7 +3,7 @@ package training.adv.team1.Api;
 import java.sql.SQLException;
 import java.util.List;
 
-import training.adv.team1.Domin.User;
+import training.adv.team1.Domain.User;
 
 public interface UserDao {
 	

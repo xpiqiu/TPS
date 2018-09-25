@@ -3,9 +3,9 @@ package training.adv.team1.Api;
 import java.sql.SQLException;
 import java.util.List;
 
-import training.adv.team1.Domin.Bound;
+import training.adv.team1.Domain.Bond;
 
-public interface BoundDao {
+public interface BondDao {
     
     //删
     public void update(String id,int status)throws SQLException;
@@ -14,7 +14,7 @@ public interface BoundDao {
     public void delete(String id)throws SQLException;
     
     //查
-    public List<Bound> findallById(String id)throws SQLException;
+    public List<Bond> findAllById(String id)throws SQLException;
     
 
 }

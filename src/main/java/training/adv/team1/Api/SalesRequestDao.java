@@ -2,7 +2,7 @@ package training.adv.team1.Api;
 
 import java.sql.SQLException;
 
-import training.adv.team1.Domin.SalesRequest;
+import training.adv.team1.Domain.SalesRequest;
 
 public interface SalesRequestDao {
 

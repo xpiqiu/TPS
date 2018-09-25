@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import training.adv.team1.Api.BoundDao;
-import training.adv.team1.Domin.Bound;
+import training.adv.team1.Api.BondDao;
+import training.adv.team1.Domain.Bond;
 
-public class BoundDaoImpl implements BoundDao {
+public class BondDaoImpl implements BondDao {
 
 	 public void update(String id,int boundstatus) throws SQLException {
 	 Connection conn = null;
@@ -48,25 +48,25 @@ public class BoundDaoImpl implements BoundDao {
 		
 	}
 
-	public List<Bound> findallById(String temp) throws SQLException {
+	public List<Bond> findAllById(String temp) throws SQLException {
 		 Connection conn = null;
 		 PreparedStatement ps = null;
 		 ResultSet rs = null;
-		 Bound b = null;
-		 List<Bound> bounds = new ArrayList<Bound>();
+		 Bond b = null;
+		 List<Bond> bounds = new ArrayList<Bond>();
 		 String sql = "select * from Bound where BoundID like '%'"+temp+"'%'";
 		 try{
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			if(rs.next()){
-				b = new Bound();
-				b.setBoundID(rs.getString(1));
+				b = new Bond();
+				/*b.setBoundID(rs.getString(1));
 				b.setFirstPrice(rs.getDouble(2));
 				b.setRate(rs.getDouble(3));
 				b.setIssueDay(rs.getDate(4));
 				b.setMaturity(rs.getDate(5));
-				b.setBoundStatus(rs.getInt(6));
+				b.setBoundStatus(rs.getInt(6));*/
 				bounds.add(b);
 			}
 		}catch(SQLException e){

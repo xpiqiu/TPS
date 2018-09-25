@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import training.adv.team1.Api.TraderRequestDao;
-import training.adv.team1.Domin.TraderRequest;
+import training.adv.team1.Domain.TraderRequest;
 
 public class TraderRequsetDaoImpl implements TraderRequestDao {
 

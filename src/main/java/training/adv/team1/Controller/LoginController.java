@@ -12,19 +12,19 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
-	@RequestMapping("/lonin.html")
+	@RequestMapping("/login.html")
 	public String LoginDo(HttpServletRequest request){
 		request.getSession().invalidate();
 		return "login";
 	}
 	
-	@RequestMapping("/lonout.html")
+	@RequestMapping("/logout.html")
 	public String LogoutDo(HttpServletRequest request){
 		request.getSession().invalidate();
 		return "login";
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping("/loginCheck")
 	public String LoginCheck(){
 		return null;
 	}

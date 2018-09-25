@@ -1,7 +1,7 @@
 package training.adv.team1.Api;
 
-import training.adv.team1.Domin.SalesRequest;
-import training.adv.team1.Domin.TraderRequest;
+import training.adv.team1.Domain.SalesRequest;
+import training.adv.team1.Domain.TraderRequest;
 
 public interface TPS {
 	public TraderRequest isRequestMatched(SalesRequest request);
@@ -11,4 +11,8 @@ public interface TPS {
 	public SalesRequest isRequestMatched(TraderRequest request);
 	
 	public int matchStatus(TraderRequest request);
+	
+	public void deleteBond(String id);
+	
+	public void editBondStatus(String id,int status);
 }

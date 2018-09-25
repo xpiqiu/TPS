@@ -1,8 +1,9 @@
-package training.adv.team1.Domin;
+package training.adv.team1.Domain;
 
+import java.io.Serializable;
 import java.util.Date;   
 
-public class SalesRequest {
+public class SalesRequest implements Serializable{
 	private String SRId;
 	private String boundId;
 	private String SalesId;

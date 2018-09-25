@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import training.adv.team1.Api.UserDao;
-import training.adv.team1.Domin.User;
+import training.adv.team1.Domain.User;
 
 import java.sql.Connection;
 

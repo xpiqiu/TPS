@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import training.adv.team1.Api.SalesRequestDao;
-import training.adv.team1.Domin.SalesRequest;
+import training.adv.team1.Domain.SalesRequest;
 
 public class SalesRequestDaoImpl implements SalesRequestDao {
 

@@ -1,4 +1,4 @@
-package training.adv.team1.Domin;
+package training.adv.team1.Domain;
 
 public class User {
 	private String id;

@@ -1,7 +1,7 @@
 package training.adv.team1.Service;
 
 import training.adv.team1.DAO.UsersDaoImpl;
-import training.adv.team1.Domin.User;
+import training.adv.team1.Domain.User;
 
 public class LoginService {
 	private UsersDaoImpl userDaoImpl;
@@ -17,4 +17,6 @@ public class LoginService {
 	public User findUserById(int id){
 		return this.findUserById(id);
 	}
+	
+	
 }
