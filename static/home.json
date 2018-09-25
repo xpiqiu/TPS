@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "bondId" : "1",
+      "firstPrice": "100",
+      "maturityDate": "2020/08/15"
+    },
+    {
+      "bondId" : "2",
+      "firstPrice": "100",
+      "maturityDate": "2020/08/15"
+    },
+    {
+      "bondId" : "3",
+      "firstPrice": "100",
+      "maturityDate": "2020/08/15"
+    }
+  ]
+}
