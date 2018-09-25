@@ -8,9 +8,23 @@ public class Bond {
 	private double coupon;
 	private Date issueDate;
 	private Date maturityDate;
-
+	private int status;
+	
 	public Bond() {
+		
 	}
+
+	
+	public Bond(String bondID, double firstPrice, double coupon, Date issueDate, Date maturityDate, int status) {
+		super();
+		this.bondID = bondID;
+		this.firstPrice = firstPrice;
+		this.coupon = coupon;
+		this.issueDate = issueDate;
+		this.maturityDate = maturityDate;
+		this.status = status;
+	}
+
 
 	public String getBondID() {
 		return bondID;
@@ -50,6 +64,15 @@ public class Bond {
 
 	public void setMaturityDate(Date maturityDate) {
 		this.maturityDate = maturityDate;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	};
+	
 
 }
